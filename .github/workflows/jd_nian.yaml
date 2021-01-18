@@ -1,7 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+<<<<<<< HEAD
 
 name: 京东炸年兽
+=======
+# 京东年兽测试
+>>>>>>> 5677d7883a9f849839f4428713f38df188acd1a3
 
 on:
     workflow_dispatch:
@@ -46,7 +50,12 @@ jobs:
                   QYWX_AM: ${{ github.event.client_payload.QYWX_AM || secrets.QYWX_AM }}
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
+<<<<<<< HEAD
                   SYNCURL: jd_nian.js
                   REPOURL: ${{ github.event.client_payload.REPOURL || secrets.REPOURL }}
                   JDNIAN_SHARECODES: ${{ github.event.client_payload.JDNIAN_SHARECODES || secrets.JDNIAN_SHARECODES }}
                   
+=======
+                  JDZZ_SHARECODES: ${{ github.event.client_payload.JDZZ_SHARECODES || secrets.JDZZ_SHARECODES }}
+                  SYNCURL: https://github.com/jackpater/MyActions/raw/main/scripts/jd_nian.js
+>>>>>>> 5677d7883a9f849839f4428713f38df188acd1a3
