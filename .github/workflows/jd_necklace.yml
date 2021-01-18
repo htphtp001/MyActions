@@ -1,17 +1,17 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_bean_change 京豆变动通知
+name: jd_necklace 点点券
 
 on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '10 */4 * * *'
   # watch:
   #   types: started
   repository_dispatch:
-    types: bean_change
+    types: jd_necklace
 jobs:
   build:
 
@@ -32,11 +32,11 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京豆变动通知】'
-        run: | 
+      - name: '运行 【点点券】'
+        run: |
           cd ~/scripts
-          npm install 
-          node jd_bean_change.js
+          npm install
+          node jd_necklace.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
