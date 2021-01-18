@@ -1,13 +1,13 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-jackpater-scripts
+name: sync-sazs34-scripts
 on:
   schedule:
-    - cron: '7 15 * * *'
+    - cron: '5 15 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync-jackpater-scripts
+    types: sync-sazs34-scripts
 jobs:
   repo-sync:
     env:
@@ -19,11 +19,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync jackpater-scripts
+      - name: sync sazs34-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/jackpater/MyActions.git"
+          source_repo: "https://github.com/Choicc/MyActions.git"
           source_branch: "main"
           destination_branch: "main"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
