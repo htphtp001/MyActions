@@ -131,7 +131,9 @@ function requireConfig() {
                 tokenArr.push(jdTokenNode[item] ? JSON.parse(jdTokenNode[item]) : tokenNull)
             })
         } else {
-            tokenArr.push(...[$.getdata('jxnc_token1') || tokenNull, $.getdata('jxnc_token2') || tokenNull]);
+            //tokenArr.push(...[$.getdata('jxnc_token1') || tokenNull, $.getdata('jxnc_token2') || tokenNull]);
+           // tokenArr.push(...[JSON.parse($.getdata('jxnc_token1')) || tokenNull, JSON.parse($.getdata('jxnc_token2')) || tokenNull]);
+              tokenArr.push(...[!!$.getdata('jxnc_token1')?JSON.parse($.getdata('jxnc_token1')):tokenNull, !!$.getdata('jxnc_token2')?JSON.parse($.getdata('jxnc_token2')):tokenNull]);
         }
 
         if ($.isNode()) {
